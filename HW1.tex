@@ -96,11 +96,7 @@ Evaluating the Jacobian at the fixed point $(0,0)$ yields:
 \end{align*}
 
 
-This analysis tells us that linearization of our system predicts a center at $(0,0)$. However, by looking at a graph of the vector field and the null clines (at lines $x = 0, y = 0,$ and $y = 2x$), reveals that there is not a center (or at least, not a typical center). This graph can be seen below. 
-
-The fact that this is not a typical center becomes even clearer when we look at the vector field graph with possible solutions overlaid. It appears that initial conditions in the 1st and 3rd quadrants return to the origin, while initial solutions in the 2nd and 4th quadrant go to infinity. This graph can be seen, with the caption ``Phase Portrait'', below.
-
-Note: In the final graph below, the vector field that is predicted by linearization has been extrapolated far past the origin, so we should not expect the actual system to follow these predictions (and they do not).
+This analysis tells us that linearization of our system predicts a center at $(0,0)$ and this is our fixed point, as can be seen by the intersection of the nullclines in the graphs below.
 
 
 
@@ -140,7 +136,7 @@ g(x,-y) &= 1 - (-y)^2 = 1-y^2 = g(x,y)
 \dot{x} &= -y-x^2 &= f(x,y)\\
 \dot{y} &= x &= g(x,y)
 \end{alignat*}
-\textbf{Answer:} Yes, the origin is a nonlinear center to this system. This center can be found by linearization of this system and can be verified by looking at a vector field / phase portrait.
+\textbf{Answer:} Maybe, the origin might be a nonlinear center to this system. Reversibility would show that this is a nonlinear center, but this system does not seem to be reversible in the y direction (despite the answer in the back of the book). The phase portrait in the graph below confirm the suspicion that this is not a nonlinear center, as there is no robust center at $(0,0)$
 
 The linearization process consists in verifying that $(0,0)$ is a fixed point and then evaluating the Jacobian of this system at the $(0,0)$ and calculating the resulting eigenvalues.
 
@@ -178,6 +174,8 @@ g(x,-y) &= x = g(x,y)
 \end{alignat*}
 
 If this system is indeed reversible, then we can use Thm 6.61 (Strogatz) to prove that this is a robust \emph{nonlinear center}.
+
+However, I am still not convinced that this system is reversible in the y direction. I cannot figure it out explicitly and the phase portrait below also fails to show $(0,0)$ as a stable center. 
 
 
 \begin{figure} [H]
