@@ -94,9 +94,13 @@ Evaluating the Jacobian at the fixed point $(0,0)$ yields:
 	0 & 0
 	\end{Bmatrix}, 	&\Lambda^2 &= 0,	&\Lambda &= 0, &det &= 0, &trace &= 0
 \end{align*}
-\end{myenv}
 
-This analysis tells us that linearization of our system predicts a center at $(0,0)$. However, by looking at a graph of the vector field and the null clines (at lines $x = 0, y = 0,$ and $y = 2x$), reveals that there is not a center (or at least, not a typical center). This graph can be seen below. The fact that this is not a typical center becomes even clearer when we look at the vector field graph with possible solutions overlaid. It appears that initial conditions in the 1st and 3rd quadrants return to the origin, while initial solutions in the 2nd and 4th quadrant go to infinity. This graph can be seen, with the caption ``Phase Portrait'', below.
+
+This analysis tells us that linearization of our system predicts a center at $(0,0)$. However, by looking at a graph of the vector field and the null clines (at lines $x = 0, y = 0,$ and $y = 2x$), reveals that there is not a center (or at least, not a typical center). This graph can be seen below. 
+
+The fact that this is not a typical center becomes even clearer when we look at the vector field graph with possible solutions overlaid. It appears that initial conditions in the 1st and 3rd quadrants return to the origin, while initial solutions in the 2nd and 4th quadrant go to infinity. This graph can be seen, with the caption ``Phase Portrait'', below.
+
+Note: In the final graph below, the vector field that is predicted by linearization has been extrapolated far past the origin, so we should not expect the actual system to follow these predictions (and they do not).
 
 
 
@@ -114,9 +118,94 @@ This analysis tells us that linearization of our system predicts a center at $(0
     \caption{ Phase Portrait}
     \label{figure:a0}
 \end{figure}
+\end{myenv}
+
+\section*{Question 3}
+\textbf{Question:} Show that the following system is reversible:
+\begin{alignat*}{3}
+\dot{x} &= y(1-x^2) &= f(x,y)\\
+\dot{y} &= 1-y^2 &= g(x,y)
+\end{alignat*}
+\textbf{Answer:} We can show that this system is reversible by showing that $f(x,-y) = -f(x,y)$ and $g(x,-y) = g(x,y)$, as seen below.
+
+\begin{alignat*}{3}
+f(x,-y) &= -y(1-x^2) = -f(x,y) \\
+g(x,-y) &= 1 - (-y)^2 = 1-y^2 = g(x,y)
+\end{alignat*}
+
+\section*{Question 4}
+\begin{myenv}
+\textbf{Question:} Is the origin a nonlinear center of the system?
+\begin{alignat*}{3}
+\dot{x} &= -y-x^2 &= f(x,y)\\
+\dot{y} &= x &= g(x,y)
+\end{alignat*}
+\textbf{Answer:} Yes, the origin is a nonlinear center to this system. This center can be found by linearization of this system and can be verified by looking at a vector field / phase portrait.
+
+The linearization process consists in verifying that $(0,0)$ is a fixed point and then evaluating the Jacobian of this system at the $(0,0)$ and calculating the resulting eigenvalues.
+
+The Jacobian matrix at a general point in this system is given as:
+\begin{align*}
+	J &= 
+	\begin{Bmatrix}
+	-2x & -1 \\
+	1 & 0
+	\end{Bmatrix}
+\end{align*}
+
+Evaluating the Jacobian at the fixed point $(0,0)$ yields:
+\begin{align*}
+	J &= 
+	\begin{Bmatrix}
+	0 & -1 \\
+	1 & 0
+	\end{Bmatrix}, 	&\Lambda^2 &= -1,	&\Lambda &= \pm i, &det &= 1, &trace &= 0
+\end{align*}
+
+Since the $det>0$ and the $trace=0$, by linearization the fixed point $(0,0)$ would be classified as a center. In order to verify this, we overlay the phase portrait on the vector field. With initial conditions starting at $(.1,.1)$ the system returns a closed orbit around the fixed point, which is expected behavior for a fixed point. This closed orbit verifies that the fixed point at $(0,0)$ is indeed a center.
+
+This system can explicitly be shown to have a \emph{nonlinear center} by showing that this system is reversible under the transformations $x \mapsto -x$ and $y \mapsto -y$.
+
+\begin{alignat*}{3}
+f(-x,y) &= -y-(-x)^2 = -y-(x)^2 = f(x,y) \\
+g(-x,y) &= (-x) = -g(x,y)
+\end{alignat*}
+
+And (the back of the book agrees that this system is reversible. I cannot figure out how $f(x,-y) = -f(x,y)$, however.)
+\begin{alignat*}{3}
+f(x,-y) &= - (-y) - x^2 =? -f(x,y) = -(-y-x^2) = y+x^2 \\
+g(x,-y) &= x = g(x,y)
+\end{alignat*}
+
+If this system is indeed reversible, then we can use Thm 6.61 (Strogatz) to prove that this is a robust \emph{nonlinear center}.
 
 
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Question4_Center}
+    \caption{ Phase Portrait}
+    \label{figure:a0}
+\end{figure}
+\end{myenv}
+
+\section*{Question 5}
+\begin{myenv}
+\textbf{Question:} Study the Lotka-Voltera predator-prey model given by the system of equations:
+\begin{alignat*}{3}
+\dot{R} &= aR - bRF \\
+\dot{F} &= -cF + dRF
+\end{alignat*}
+a) Show that the model can be recast in a non-dimensional form:
+\begin{alignat*}{3}
+\dot{x} &= x(1-y) \\
+\dot{y} &= \mu y(x-1)
+\end{alignat*}
+b) Plot the vector field of the system.
+c) Discuss the biological relevance of solutions of the system.
+\textbf{Answer:} 
+a) 
 
 
+\end{myenv}
 \end{document}
 
