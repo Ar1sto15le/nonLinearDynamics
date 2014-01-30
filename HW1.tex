@@ -199,10 +199,58 @@ a) Show that the model can be recast in a non-dimensional form:
 \dot{y} &= \mu y(x-1)
 \end{alignat*}
 b) Plot the vector field of the system.
-c) Discuss the biological relevance of solutions of the system.
-\textbf{Answer:} 
-a) 
 
+c) Discuss the biological relevance of solutions of the system.
+
+\textbf{Answer:} \\
+a) In order to show that this model can be recast in a non-dimensional form, we factor both of the equations to get an intuition as to what our substitution will be:
+\begin{alignat*}{3}
+\dot{R} &= aR - bRF &= aR(1-\frac{b}{a}F) \\
+\dot{F} &= -cF + dRF &= cF(\frac{d}{c}R-1)
+\end{alignat*}
+
+Intuition tells us that our substitution will be $x = \frac{d}{c}R$ and $y = \frac{b}{a}F$. We then find a $\tau(t)$, where $\tau=t/T$ and T is our characteristic time scale to be found. To find T, we use the chain rule in reverse and then solve $\frac{dt}{d\tau}$ for both $\dot{x}$ and $dot{y}$.
+
+The chain rule yields:
+\begin{alignat*}{3}
+\dot{x} &= \frac{dx}{d\tau} &= \frac{dx}{dR} \frac{dR}{dt} \frac{dt}{d\tau} &= x(1-y) \\
+\\
+\dot{y} &= \frac{dy}{d\tau} &= \frac{dy}{dF} \frac{dF}{dt} \frac{dt}{d\tau} &= \mu y(x-1)
+\end{alignat*}
+
+We are able to substitute for everything in these equations except for $\frac{dt}{d\tau}$, using the fact that:
+\begin{alignat*}{3}
+\frac{dx}{dR} &= \frac{d}{c} \\
+\\
+\frac{dy}{dF} &= \frac{b}{a}
+\end{alignat*}
+
+Substitution yields:
+\begin{alignat*}{3}
+\dot{x} &= \frac{d}{c}Ra(1-y)\frac{dt}{d\tau} &= x(1-y)
+\end{alignat*}
+
+From this, we can see that $\frac{dt}{d\tau} = \frac{1}{a}$. We solve this by separation of variables and find that $\tau = at$. Substituting $\frac{dt}{d\tau} = \frac{1}{a}$ back into $\dot{y}$, we will see that $\mu = \frac{c}{a}$.
+
+\begin{align*}
+\dot{y} &= \frac{b}{a}cF(x-1)\frac{dt}{d\tau} = \mu y(x-1) &= \frac{c}{a}y(x-1)
+\end{align*}
+
+Ultimately, with these substitutions, we arrive at the desired result:
+\begin{alignat*}{3}
+\dot{x} &= x(1-y) \\
+\dot{y} &= \mu y(x-1)
+\end{alignat*}
+
+b) A vector field can be seen in the graph below. Note: this vector field used $\mu = \frac{c}{a} = \frac{.3}{.7}$.
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Question5_VectorField}
+    \caption{ Vector Field}
+    \label{figure:a0}
+\end{figure}
+
+c) The vector field below shows the interesting result that the species represented by $\dot{x}$, which is the rabbit species in this model, almost always gets near extinction only to recover. We can also see that the fixed point at $(1,1)$ yields a linear center which is predicted by eigenvalues of $\lambda = \pm \mu i$. This center would appear to be nonlinear, as well, because of the vector field, although this cannot be shown by reversibility because this system is not reversible
 
 \end{myenv}
 \end{document}
